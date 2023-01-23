@@ -1,0 +1,2 @@
+#include<iostream>
+int main(){int N,X,Y,a,b=1,i,j,p[303]={0,};p[0]=2;for(i=3;i<2000;i++){a=1;for(j=0;p[j]*p[j]<=i;j++)if(!(i%p[j])){a=0;break;}if(a)p[b++]=i;}std::cin>>N>>X>>Y>>a>>b;for(b=0;a>p[b];b++);for(i=1;i<=N;i++){for(j=1;j<=N;j++)std::cout<<p[(X-i<0?i-X:X-i)+(Y-j<0?j-Y:Y-j)+b]<<' ';std::cout<<'\n';}}
