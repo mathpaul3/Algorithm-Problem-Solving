@@ -26,11 +26,23 @@ int main() {
 
     while (!q.empty()) {
         time++;
-        int sz = q.size();
+        int sz = fire.size();
+        for (int a=0; a<sz; a++) {
+            int i=fire.front().first, j=fire.front().second;
+            fire.pop();
+            for (int k=0; k<4; k++) {
+                int y=i+mv[k], x=j+mv[(k+2)%4];
+                if (0<=y && y<R && 0<=x && x<C && map[y][x]=='.') {
+                    map[y][x] = 'F';
+                    fire.push(make_pair(y, x));
+                }
+            }
+        }
+
+        sz = q.size();
         for (int a=0; a<sz; a++) {
             int i=q.front().first, j=q.front().second;
             q.pop();
-            if (map[i][j] == 'F') continue;
             for (int b=0; b<4; b++) {
                 int y=i+mv[b], x=j+mv[(b+2)%4];
                 if (0<=y && y<R && 0<=x && x<C) {
@@ -41,18 +53,6 @@ int main() {
                 } else {
                     cout << time << '\n';
                     return 0;
-                }
-            }
-        }
-        sz = fire.size();
-        for (int a=0; a<sz; a++) {
-            int i=fire.front().first, j=fire.front().second;
-            fire.pop();
-            for (int k=0; k<4; k++) {
-                int y=i+mv[k], x=j+mv[(k+2)%4];
-                if (0<=y && y<R && 0<=x && x<C && map[y][x]=='.') {
-                    map[y][x] = 'F';
-                    fire.push(make_pair(y, x));
                 }
             }
         }
