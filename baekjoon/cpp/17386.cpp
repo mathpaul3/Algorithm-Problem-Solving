@@ -1,8 +1,6 @@
 #include <iostream>
 using namespace std;
 
-typedef long long ll;
-
 typedef struct Point {
     int x;
     int y;
@@ -12,7 +10,7 @@ int direction(Point p1, Point p2, Point p3) {
     Point a, b;
     a.x = p1.x-p3.x, a.y = p1.y-p3.y;
     b.x = p2.x-p3.x, b.y = p2.y-p3.y;
-    return ((ll)a.x*b.y-(ll)a.y*b.x)>0 ? 1 : -1;
+    return ((long long)a.x*b.y-(long long)a.y*b.x)>0 ? 1 : -1;
 }
 
 bool is_intersect(Point *p) {
