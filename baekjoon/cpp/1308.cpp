@@ -39,9 +39,9 @@ int main() {
         d_day = day_cumulation(eYYYY, eMM)+eDD - (day_cumulation(sYYYY, sMM)+sDD);
     else {
         d_day += day_cumulation(sYYYY, 0) - (day_cumulation(sYYYY, sMM)+sDD);
-        d_day += day_cumulation(eYYYY, eMM) + eDD;
         for (int YYYY=sYYYY+1; YYYY<eYYYY; YYYY++)
             d_day += day_cumulation(YYYY, 0);
+        d_day += day_cumulation(eYYYY, eMM) + eDD;
     }
     cout << "D-" << d_day << '\n';
     return 0;
