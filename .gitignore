@@ -1,7 +1,6 @@
 ### ignore executable binary file
 # ignore all
 *
-*.exe
 
 # unignore all with extensions
 !*.*
@@ -13,3 +12,4 @@
 .vscode/*
 .DS_Store
 images/
+*.exe
