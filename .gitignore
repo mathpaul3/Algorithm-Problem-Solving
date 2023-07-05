@@ -1,6 +1,7 @@
 ### ignore executable binary file
 # ignore all
 *
+*.exe
 
 # unignore all with extensions
 !*.*
